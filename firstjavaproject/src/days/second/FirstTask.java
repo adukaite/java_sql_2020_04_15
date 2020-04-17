@@ -1,5 +1,6 @@
 package days.second;
 
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class FirstTask {
 
         int selection = 0;
         while (selection != 5) {
+
             System.out.println("1. Staciojo trikampio plotas\n2. Staciakampio plotas\n3. Kvadrato plotas\n4. Apskritimo plotas\n5. Baigti");
             selection = (int) NumberUtils.getCorrectNumber(scanner);
             switch (selection) {
@@ -26,7 +28,6 @@ public class FirstTask {
                     firstTask.countCircle(scanner);
                     break;
                 case 5:
-                    System.exit(0);
                     break;
                 default:
                     System.out.println("Tokio veiksmo nera");
@@ -36,9 +37,9 @@ public class FirstTask {
 
     private void countTriangle(Scanner scanner) {
         System.out.println("Iveskite pirma statini:");
-        int a = getCorrectNumber(scanner);
+        int a =(int) NumberUtils.getCorrectNumber(scanner);
         System.out.println("Iveskite antra statini:");
-        int b = getCorrectNumber(scanner);
+        int b =(int) NumberUtils.getCorrectNumber(scanner);
 
         System.out.println("Trikampio plotas yra:" + a * b / 2);
 
@@ -46,18 +47,18 @@ public class FirstTask {
 
     private void countRectangular(Scanner scanner) {
         System.out.println("Iveskite pirma krastine:");
-        int a = getCorrectNumber(scanner);
+        int a =(int) NumberUtils.getCorrectNumber(scanner);
         System.out.println("Iveskite antra krastine:");
-        int b = getCorrectNumber(scanner);
+        int b =(int) NumberUtils.getCorrectNumber(scanner);
 
         System.out.println("Staciakampio plotas yra:" + a * b);
     }
 
     private void countSquare(Scanner scanner) {
         System.out.println("Iveskite pirma krastine:");
-        int a = getCorrectNumber(scanner);
+        int a =(int) NumberUtils.getCorrectNumber(scanner);
         System.out.println("Iveskite antra krastine:");
-        int b = getCorrectNumber(scanner);
+        int b =(int) NumberUtils.getCorrectNumber(scanner);
 
         System.out.println("Kvadrato plotas yra:" + a * b);
 
@@ -65,22 +66,9 @@ public class FirstTask {
 
     private void countCircle(Scanner scanner) {
         System.out.println("Iveskite spinduli:");
-        double r = getCorrectNumber(scanner);
+        double r = NumberUtils.getCorrectNumber(scanner);
+        DecimalFormat df = new DecimalFormat("00.00");
         double pi = 3.1415;
-        System.out.println("Apskritimo plotas yra:" + Math.pow(r, 2) * pi);
+        System.out.println("Apskritimo plotas yra:" + df.format(Math.pow(r, 2) * pi));
     }
-
-    private int getCorrectNumber(Scanner scanner) {
-        while (true) {
-            try {
-                int number = scanner.nextInt();
-                return number;
-            } catch (InputMismatchException e) {
-                System.out.println("Ivedete bloga skaiciu, pakartokite");
-                scanner.nextLine();
-            }
-        }
-    }
-
-
 }
