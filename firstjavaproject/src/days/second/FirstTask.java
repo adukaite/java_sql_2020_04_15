@@ -69,6 +69,6 @@ public class FirstTask {
         double r = NumberUtils.getCorrectNumber(scanner);
         DecimalFormat df = new DecimalFormat("00.00");
         double pi = 3.1415;
-        System.out.println("Apskritimo plotas yra:" + df.format(Math.pow(r, 2) * pi));
+        System.out.println("Apskritimo plotas yra:" + df.format(Math.pow(r, 2) * pi)) ;
     }
 }
