@@ -1,4 +1,4 @@
-package days;
+package days.zero;
 
 import days.second.NumberUtils;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * parašytų ar šis skaičius yra lyginis, ar nelyginis. Užuomina panaudokite % operatoriu.
  */
 
-public class HomeWork {
+public class HW1stTask {
     public static void main(String[] args) {
         System.out.println("Iveskite skaiciu");
         Scanner scanner = new Scanner(System.in);
