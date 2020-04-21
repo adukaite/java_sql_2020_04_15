@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class HW3rdTask {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Programa atvaizduos ivestu skaiciu suma, ivedus 0 sistema baigs darba");
+        System.out.println("Programa atvaizduos ivestu skaiciu suma, ivedus 0 sistema baigs skaiciavima");
         int number = -1, sum = 0;
 
         while(number != 0){
